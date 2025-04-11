@@ -48,8 +48,8 @@ class ItemsDataTable extends DataTable
                     $html .= '</div>';
                     return $html;
                 }
-                // Fallback if no images exist
-                return '<img src="/images/default.png" width="50" height="50" alt="No image available">';
+                // Fallback if no images exist: use default_picture.jpg from storage.
+                return '<img src="'.Storage::url('default_picture.jpg').'" width="50" height="50" alt="No image available">';
             })
             ->addColumn('action', function ($row) {
                 $editUrl = route('items.edit', $row->item_id);
@@ -126,8 +126,8 @@ class ItemsDataTable extends DataTable
                   ->width(60)
                   ->addClass('text-center'),
             Column::make('item_id')->title('ID'),
-            Column::make('name')->title('Name'), // Added 'name' column
             Column::make('images')->title('Images'),
+            Column::make('name')->title('Name'), // Added 'name' column
             Column::make('description')->title('Description'),
             Column::make('category')->title('Category'), // Added 'category' column
             Column::make('cost_price')->title('Cost Price'),

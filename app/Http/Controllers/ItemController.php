@@ -385,7 +385,7 @@ class ItemController extends Controller
             $order->customer_id = $customer->customer_id;
             $order->date_placed = now();
             $order->date_shipped = Carbon::now()->addDays(5);
-            $order->shipping = 10.00;
+            $order->shipping = 45.00;
             $order->status = 'pending';
             $order->save();
             Log::debug('Order saved', ['order' => $order]);

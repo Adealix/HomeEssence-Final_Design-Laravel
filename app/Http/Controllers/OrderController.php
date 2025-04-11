@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Order;
+use App\Models\Stock;
 use App\Mail\SendOrderStatus;
 use Mail;
 use Illuminate\Support\Facades\Log;
@@ -93,6 +94,22 @@ class OrderController extends Controller
             $order->status = $request->status;
             if ($request->status === 'delivered') {
                 $order->date_shipped = Carbon::now();
+                // Update stock for each item in the order
+                foreach ($order->orderlines as $orderline) {
+                    $item = $orderline->item;
+                    $stock = $item->stock;
+                    $stock->quantity -= $orderline->quantity;
+                    $stock->save();
+                }
+            } elseif ($request->status === 'canceled') {
+                // Revert stock for each item in the order
+                foreach ($order->orderlines as $orderline) {
+                    $item = $orderline->item;
+                    $stock = $item->stock;
+                    $stock->quantity += $orderline->quantity;
+                    $stock->save();
+                }
+                $order->date_shipped = null;
             } else {
                 $order->date_shipped = null;
             }
@@ -135,5 +152,4 @@ class OrderController extends Controller
             return redirect()->route('admin.orders')->with('error', 'Failed to update order: ' . $e->getMessage());
         }
     }
-    
 }

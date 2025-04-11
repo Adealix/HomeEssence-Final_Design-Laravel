@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2025 at 04:21 PM
+-- Generation Time: Mar 20, 2025 at 03:58 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -80,14 +80,11 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_id`, `title`, `fname`, `lname`, `addressline`, `town`, `zipcode`, `phone`, `profile_picture`, `user_id`) VALUES
-(1, 'Mr.', 'Admin edited', 'Account Gagana?', 'Block 29, Lot 31 Taguig City', 'Taguig City', '1633', '091800000', '69idumgtKMAZdcVw4GU2ShdXxNXpBrL74yykfmJO.png', 1),
-(2, 'Mr.', 'Try', 'Account', 'asdsdfd sdfsdre', 'Leschtown', '0000', '09180000034', NULL, 2),
-(3, 'Mrs.', 'Admin 2nd', 'Account', 'xd pro', 'BGC', '1232', '0918007654', NULL, 3),
-(4, 'G.', 'Try', 'Acc New Func di gumana', 'xds pro max s ultra', 'ewan', '1263', '0932408', NULL, 4),
-(5, 'Ms', 'Try Function', 'Customer', 'kung saan-saan na lugar basta mayroon', 'Taguig', '1633', '092340923', NULL, 6),
-(6, 'asd', 'asd', 'dsfert', 'asdzcx', '2sdfsd', '2134', '09180000034', NULL, 6),
-(7, 'Mr.', 'Jillian', 'Maranan', 'asdaewqe asd as d', 'asdjhaiuwehgr', '2134', '0918007654', NULL, 7),
-(8, 'Mr.', 'Joz', 'Maranan', 'alksjdqwouiyeuh askjdhiquwh', 'BGC', '2137', '398475934673', NULL, 8);
+(1, NULL, 'Admin', 'Account', 'kahit saan basta admin to', 'Admin Town', '1623', '092347637645', 'rrpaL32buTaJESDY0Z9j0ykq9DkxPEcfA5dNZ9b8.png', 1),
+(2, NULL, 'Admin 2nd palit profile', 'Account eh Gumana', 'Sige na nga, sa Lower Bicutan na to', 'Cavite City', '1234', '2389047983', '5Rgsz5vUsep4VuqOXzn5tDXWOwyYsomcOpwqH5tH.jpg', 2),
+(3, 'Mr.', 'Try', 'Account', 'sadhufiusygdf', 'asddfg', '2378', '2338427', 'QzmdVaeNYp88gvMGKbBjIWo8h4Y03VrPInRUkBsK.jpg', 3),
+(4, 'Mrs.', 'Try', 'Account 2', 'sodifhjiusdhf', 'oiwejouihsd iohdf', '1276', '23847929834', '4faPmdy37di2uM69IuyMCTw033H5dSyqAFU08BEF.jpg', 4),
+(5, 'Mr.', 'Adealix Jairon', 'Maranan', 'Block 29, Lot 31, Damayan Area, Central Signal Taguig City', 'Taguig City', '1633', '09157782493', 'JevXOOyrzipvt6lMxhlQxT55F4g6x9Y7pljGtx5o.jpg', 5);
 
 -- --------------------------------------------------------
 
@@ -128,7 +125,15 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`item_id`, `name`, `description`, `category`, `cost_price`, `sell_price`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(4, 'Unang Gamit ulit edit naman', 'ewan, sana gumana kase kung inde iiyaq aq', 'kahit ano na muna to', 15.00, 25.00, '2025-03-14 19:36:51', '2025-03-14 19:37:44', NULL);
+(4, 'Unang Gamit ulit edit naman', 'ewan, sana gumana kase kung inde iiyaq aq', 'Option 5', 15.00, 25.00, '2025-03-14 19:36:51', '2025-03-16 04:34:02', NULL),
+(5, 'Second Item', 'kahit ano', 'Option 4', 100.00, 250.00, '2025-03-15 16:13:51', '2025-03-16 04:33:39', NULL),
+(6, 'Pangatlo na multiple images', 'gagana ba multiple?', 'Option 3', 8.00, 15.00, '2025-03-15 16:16:32', '2025-03-16 04:33:32', NULL),
+(7, 'Try Nga Create new Item', 'fhsdgbshdjkfg*&!#$^*@#&$(*@#$asd', 'Option 2', 15.00, 12.00, '2025-03-16 03:39:36', '2025-03-16 04:33:23', NULL),
+(8, 'Hehe Xd', 'asdasdwqer', 'Option 1', 123.00, 234.00, '2025-03-16 03:46:26', '2025-03-16 04:33:15', NULL),
+(9, 'Adeasad asd asd asqwea', 'asdad hgehe bhuiasdhguiahsd', 'Option 1', 14.00, 35.00, '2025-03-16 04:34:59', '2025-03-16 04:34:59', NULL),
+(10, 'Try', 'excel import to', 'Option 1', 15.00, 25.00, '2025-03-20 06:10:16', '2025-03-20 06:10:16', NULL),
+(11, 'tingnan natin kung maayos pa bna database', 'basta kahit ano', 'Option 1', 123.00, 234.00, '2025-03-20 06:11:00', '2025-03-20 06:11:00', NULL),
+(12, 'Try may image', 'default image', 'Option 2', 15.00, 25.00, '2025-03-20 06:21:28', '2025-03-20 06:21:28', NULL);
 
 -- --------------------------------------------------------
 
@@ -218,7 +223,9 @@ CREATE TABLE `orderinfo` (
 --
 
 INSERT INTO `orderinfo` (`orderinfo_id`, `customer_id`, `date_placed`, `date_shipped`, `shipping`, `status`, `created_at`, `updated_at`) VALUES
-(1, 3, '2025-03-15', '2025-03-20', 10.00, 'pending', '2025-03-14 19:39:51', '2025-03-14 19:39:51');
+(1, 1, '2025-03-20', '2025-03-20', 45.00, 'delivered', '2025-03-20 03:26:59', '2025-03-20 06:44:37'),
+(2, 1, '2025-03-20', '2025-03-20', 45.00, 'delivered', '2025-03-20 03:53:27', '2025-03-20 06:44:17'),
+(3, 2, '2025-03-20', '2025-03-20', 45.00, 'delivered', '2025-03-20 04:37:39', '2025-03-20 04:55:20');
 
 -- --------------------------------------------------------
 
@@ -237,7 +244,12 @@ CREATE TABLE `orderline` (
 --
 
 INSERT INTO `orderline` (`item_id`, `orderinfo_id`, `quantity`) VALUES
-(4, 1, 2);
+(4, 1, 1),
+(5, 1, 2),
+(9, 1, 1),
+(8, 2, 1),
+(9, 2, 1),
+(6, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -308,22 +320,6 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `process_order`
--- (See below for the actual view)
---
-CREATE TABLE `process_order` (
-`orderinfo_id` int(11)
-,`fname` varchar(32)
-,`lname` varchar(32)
-,`addressline` text
-,`date_placed` date
-,`status` enum('pending','delivered','canceled')
-,`total` decimal(32,2)
-);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `product_images`
 --
 
@@ -340,7 +336,49 @@ CREATE TABLE `product_images` (
 --
 
 INSERT INTO `product_images` (`id`, `item_id`, `image_path`, `created_at`, `updated_at`) VALUES
-(15, 4, 'public/images/F1lC61mX5xkQjZvIwzhit6lAj3yg7VGSkpmAzvF8.png', '2025-03-14 19:37:33', '2025-03-14 19:37:33');
+(15, 4, 'public/images/F1lC61mX5xkQjZvIwzhit6lAj3yg7VGSkpmAzvF8.png', '2025-03-14 19:37:33', '2025-03-14 19:37:33'),
+(16, 5, 'public/images/5Hq58yU4gpIlfKSCMVvpq9ZWq8h7xN6MoJYehL3z.jpg', '2025-03-15 16:13:51', '2025-03-15 16:13:51'),
+(17, 6, 'public/images/7ZsFwhCZNKb2QtipPTip9piiRi40gLF3Qa1dB6qb.png', '2025-03-15 16:16:32', '2025-03-15 16:16:32'),
+(18, 6, 'public/images/w7vzltfDlJ9L0DemObfUW3roLte3ByADDJY06Wg0.jpg', '2025-03-15 16:16:32', '2025-03-15 16:16:32'),
+(19, 6, 'public/images/3o7BqRWsPAzXSi6To5JDa46WwDZyB3rwBHJoL9V8.jpg', '2025-03-15 16:16:32', '2025-03-15 16:16:32'),
+(20, 7, 'public/images/7CNDuQZSIBL3bSYRV9MkkxUUZfmMlE8sEoclMK8S.jpg', '2025-03-16 03:39:36', '2025-03-16 03:39:36'),
+(21, 7, 'public/images/U2UxakYWD8IcjZiCdDQvNXmesVQGNLL8uuL1TXaq.jpg', '2025-03-16 03:39:36', '2025-03-16 03:39:36'),
+(22, 7, 'public/images/wUPZmhekFMvSexr91Mar8MlxOaBBFNUdyFJMzRDj.jpg', '2025-03-16 03:39:36', '2025-03-16 03:39:36'),
+(23, 7, 'public/images/QohxoR8kht7lFbGKiHCxki91fioq5UzWOAKjZSAp.jpg', '2025-03-16 03:39:36', '2025-03-16 03:39:36'),
+(24, 7, 'public/images/hUnGGSiL4D9m5SNPYi452BV1Z3sde8ND3C0MZgXc.jpg', '2025-03-16 03:39:36', '2025-03-16 03:39:36'),
+(25, 7, 'public/images/MyrXAguTwSLCVApcj1XA4k4fhyoAtLBGYMrStZiF.png', '2025-03-16 03:39:36', '2025-03-16 03:39:36'),
+(26, 8, 'public/images/cZ2jSVwRzW6sxTGZYwiUjBqbBgPe9r5enj5EBIxJ.jpg', '2025-03-16 03:46:26', '2025-03-16 03:46:26'),
+(27, 8, 'public/images/amx4FdhbKXAlIMlgfkrApiRhIHT59HcM3zst4IeK.jpg', '2025-03-16 03:46:26', '2025-03-16 03:46:26'),
+(28, 9, 'public/images/FOkSHBccCpyM67NUpLePorDMckhitVd4t0KV1Pdj.jpg', '2025-03-16 04:34:59', '2025-03-16 04:34:59'),
+(29, 9, 'public/images/WlyeFxLH3Y3WnRN8AFCoUJPoaFw59Dc7XKU10qal.jpg', '2025-03-16 04:34:59', '2025-03-16 04:34:59'),
+(30, 11, 'public/images/vKi0EioYONJMIPqh9PaQHqG6kH00vuOEKgZDeWEo.png', '2025-03-20 06:11:00', '2025-03-20 06:11:00'),
+(31, 11, 'public/images/jdiWDwHamkfSgG66g9iHSztWXQJzzmMDx18Tii9L.png', '2025-03-20 06:11:00', '2025-03-20 06:11:00'),
+(32, 11, 'public/images/eAbidMZbLjJ3FkpEEeBd5hDyW1LjTTeo6n3nznB3.png', '2025-03-20 06:11:00', '2025-03-20 06:11:00'),
+(33, 10, 'default_picture.jpg', NULL, NULL),
+(34, 12, 'default_picture.jpg', '2025-03-20 06:21:28', '2025-03-20 06:21:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `review_id` int(11) NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `rating` tinyint(3) UNSIGNED NOT NULL,
+  `comment` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`review_id`, `user_id`, `item_id`, `rating`, `comment`, `created_at`, `updated_at`) VALUES
+(3, 2, 6, 5, 'yeey may design na siyaaa', '2025-03-20 05:34:27', '2025-03-20 05:34:27');
 
 -- --------------------------------------------------------
 
@@ -373,7 +411,15 @@ CREATE TABLE `stock` (
 --
 
 INSERT INTO `stock` (`item_id`, `quantity`) VALUES
-(4, 3);
+(4, 3),
+(5, 1),
+(6, 4),
+(7, 5),
+(8, 3),
+(9, 1),
+(10, 5),
+(11, 5),
+(12, 5);
 
 -- --------------------------------------------------------
 
@@ -399,13 +445,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`, `status`) VALUES
-(1, 'Admin Account', 'admin@gmail.com', NULL, '$2y$10$FOTMqchmJWAfTxtxz8UHDeKkGucN6aaJoBXDu.6bJRek/fZWeN/yW', '76buvPhcjbDJZ81kkm9xJNWDb6Gg4x38EB0FYqFQHszttz8yyZ2ELsZ8LgNy', '2025-03-06 16:38:55', '2025-03-06 16:38:55', 'admin', 'active'),
-(2, 'Try Account', 'tryacc@gmail.com', NULL, '$2y$10$ebpKwicLxbbDS2Z5jVVj2edlCPhLIow5wam65yLWE4C/czYh4rQmq', NULL, '2025-03-06 16:45:56', '2025-03-06 16:45:56', 'user', 'active'),
-(3, 'Admin 2nd Account', 'admin2@gmail.com', NULL, '$2y$10$cE8ai3.hgmDs6cxlYTbQqORCGHiHXcQJVg24ZZvZMP6NeE/cIDtq2', NULL, '2025-03-06 17:07:32', '2025-03-06 17:17:05', 'admin', 'active'),
-(4, 'Try New Function', 'tryacc3@gmail.com', NULL, '$2y$10$XooXNUSc3gNNHz52ok4/Eef.gOSGiVc/jJT24ZwXyO8fvXrX5p7L6', NULL, '2025-03-11 17:32:08', '2025-03-11 17:32:08', 'user', 'active'),
-(6, 'Try Function Customer', 'trycust@gmail.com', NULL, '$2y$10$hU87Qj2ZebME0/ZtXUnruOcV50cBM8d6qSM6.ZRRCtmQtFKz43MlW', NULL, '2025-03-11 19:04:46', '2025-03-15 06:38:58', 'admin', 'active'),
-(7, 'Jillian Maranan', 'jillianmaranan@gmail.com', NULL, '$2y$10$QJcgfZCDKIijMrihDghZd.OSEuD1ZtojaQ3l0WnACWWwP.hXLMujS', NULL, '2025-03-14 04:48:08', '2025-03-15 06:28:39', 'user', 'inactive'),
-(8, 'Joz Maranan', 'jozmaranan@gmail.com', NULL, '$2y$10$KTZzoxDdDhKhK.sYimQwfO.B.v/..pxmQ4xS5n7myJOzkDp9Rg5cW', NULL, '2025-03-14 04:56:10', '2025-03-15 06:27:59', 'admin', 'active');
+(1, 'Admin Account', 'admin@gmail.com', '2025-03-15 16:12:02', '$2y$10$5yQ4sWHDMXt7/Y2LQKWl/e6V4zrsr7QAFY9ybg56SZ2oZ3y5Q3rEa', NULL, '2025-03-15 16:10:51', '2025-03-15 16:12:02', 'admin', 'active'),
+(2, 'Admin 2nd Account', 'admin2@gmail.com', '2025-03-15 17:12:26', '$2y$10$Vsvo.sRbGWGqvu.xQ7N5KOWa8l3CJj575gKEVgoDnxm6xJhr/X58S', 'vHw7eVqzMSkI3CDTA4HgXYlmZwZuoaqVyh7mj9CyNSZFKQn9qPsXY3Ugk44A', '2025-03-15 17:12:07', '2025-03-15 17:28:15', 'admin', 'active'),
+(3, 'Try Account', 'tryacc@gmail.com', '2025-03-15 17:17:37', '$2y$10$B6sYnZhs/dFcCkxaBvUMLeOGnbpRQLVGYCh6TcvB23OpDWTdkCu.u', NULL, '2025-03-15 17:16:53', '2025-03-16 03:07:17', 'admin', 'inactive'),
+(4, 'Try Account 2', 'tryacc2@gmail.com', '2025-03-15 17:20:34', '$2y$10$q/LENs0pt0VdgExVNQo0Ku8BMycvs0oWwVma60A9hgqa89AvCsZM2', NULL, '2025-03-15 17:20:26', '2025-03-15 17:20:34', 'user', 'active'),
+(5, 'Adealix Maranan', 'adealixmaranan123@gmail.com', '2025-03-18 03:03:13', '$2y$10$JR/y9/U.51pNE0oWFEkLgeamOaz9djEF4ey4YZN1eojMSoC0doFTy', NULL, '2025-03-18 03:02:46', '2025-03-18 03:03:13', 'user', 'active');
 
 -- --------------------------------------------------------
 
@@ -415,15 +459,6 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 DROP TABLE IF EXISTS `orders_view`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `orders_view`  AS SELECT `o`.`orderinfo_id` AS `orderinfo_id`, `c`.`fname` AS `fname`, `c`.`lname` AS `lname`, `c`.`addressline` AS `addressline`, `o`.`date_placed` AS `date_placed`, `o`.`status` AS `status`, sum(`ol`.`quantity` * `i`.`sell_price`) AS `total` FROM (((`customer` `c` join `orderinfo` `o` on(`o`.`customer_id` = `c`.`customer_id`)) join `orderline` `ol` on(`o`.`orderinfo_id` = `ol`.`orderinfo_id`)) join `item` `i` on(`ol`.`item_id` = `i`.`item_id`)) GROUP BY `o`.`orderinfo_id`, `c`.`fname`, `c`.`lname`, `c`.`addressline`, `o`.`date_placed`, `o`.`status` ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `process_order`
---
-DROP TABLE IF EXISTS `process_order`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `process_order`  AS SELECT `o`.`orderinfo_id` AS `orderinfo_id`, `c`.`fname` AS `fname`, `c`.`lname` AS `lname`, `c`.`addressline` AS `addressline`, `o`.`date_placed` AS `date_placed`, `o`.`status` AS `status`, sum(`ol`.`quantity` * `i`.`sell_price`) AS `total` FROM (((`customer` `c` join `orderinfo` `o` on(`o`.`customer_id` = `c`.`customer_id`)) join `orderline` `ol` on(`o`.`orderinfo_id` = `ol`.`orderinfo_id`)) join `item` `i` on(`ol`.`item_id` = `i`.`item_id`)) GROUP BY `o`.`orderinfo_id`, `c`.`fname`, `c`.`lname`, `c`.`addressline`, `o`.`date_placed`, `o`.`status` ;
 
 --
 -- Indexes for dumped tables
@@ -529,6 +564,14 @@ ALTER TABLE `product_images`
   ADD KEY `item_id` (`item_id`);
 
 --
+-- Indexes for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`review_id`),
+  ADD KEY `reviews_user_id_foreign` (`user_id`),
+  ADD KEY `reviews_item_id_foreign` (`item_id`);
+
+--
 -- Indexes for table `sessions`
 --
 ALTER TABLE `sessions`
@@ -557,7 +600,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -569,7 +612,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `jobs`
@@ -587,7 +630,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orderinfo`
 --
 ALTER TABLE `orderinfo`
-  MODIFY `orderinfo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `orderinfo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -599,13 +642,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
@@ -641,6 +690,13 @@ ALTER TABLE `orderline`
 --
 ALTER TABLE `product_images`
   ADD CONSTRAINT `product_images_item_id_foreign` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD CONSTRAINT `reviews_item_id_foreign` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `reviews_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `stock`

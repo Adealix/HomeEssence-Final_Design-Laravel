@@ -3,6 +3,10 @@
 
 @section('body')
 <div class="container mt-4">
+    <!-- Add to search_like.blade.php -->
+<div class="search-type-indicator">
+    <span class="badge bg-primary">Scout Search</span>
+</div>
     <h1 class="mb-3">Search Results (Laravel Scout)</h1>
     <p>Found <strong>{{ $items->total() }}</strong> item(s) for "<strong>{{ $term }}</strong>"</p>
 

@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Stock extends Model
 {
     use HasFactory;
+    
     protected $table = 'stock';
     protected $primaryKey = 'item_id';
     public $timestamps = false;
+
+    protected $casts = [
+        'stock' => 'integer',
+    ];
 }

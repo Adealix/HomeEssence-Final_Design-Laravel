@@ -2,12 +2,6 @@
 
 @section('body')
 <div class="container my-5">
-    <!-- Flash messages for success or error -->
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
 
     @if(session('error'))
         <div class="alert alert-danger">

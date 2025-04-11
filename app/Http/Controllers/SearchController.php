@@ -10,6 +10,31 @@ use App\Models\Customer;
 class SearchController extends Controller
 {
     /**
+     * Default search method that redirects to the appropriate search method
+     * based on the selected search type
+     */
+    public function search(Request $request)
+    {
+        $request->validate([
+            'term' => 'required|string|max:255',
+            'search_type' => 'sometimes|string|in:like,model,scout'
+        ]);
+
+        $term = trim($request->term);
+        $searchType = $request->search_type ?? 'like'; // Default to like if not specified
+
+        switch ($searchType) {
+            case 'model':
+                return $this->searchModel($request);
+            case 'scout':
+                return $this->searchScout($request);
+            case 'like':
+            default:
+                return $this->searchLike($request);
+        }
+    }
+
+    /**
      * Search products on the home page using a raw LIKE query.
      * (8 pts)
      */

@@ -3,6 +3,10 @@
 
 @section('body')
 <div class="container mt-4">
+    <!-- Add to search_like.blade.php -->
+<div class="search-type-indicator">
+    <span class="badge bg-primary">Model Search</span>
+</div>
     <h1 class="mb-3">Search Results (Model Search)</h1>
     <p>Found <strong>{{ $searchResults->count() }}</strong> result(s) for "<strong>{{ $term }}</strong>"</p>
     
